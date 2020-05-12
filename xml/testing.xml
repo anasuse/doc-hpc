@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook51-profile.xsl"
+ type="text/xml"
+ title="Profiling step"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+
+
+<chapter xml:id="cha-testing" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Testing your cluster</title>
+ <info>
+  <abstract>
+   <para>
+    What is this chapter about?
+   </para>
+  </abstract>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+   <dm:translation>yes</dm:translation>
+  </dm:docmanager>
+ </info>
+ <!--
+ <sect1 xml:id="sec-testing-pdsh">
+  <title>pdsh</title>
+  <para>
+      TOFIX
+  </para>
+ </sect1>
+ <sect1 xml:id="sec-testing-env">
+  <title>ENV</title>
+  <para>
+    TOFIX
+  </para>
+ </sect1>
+  -->
+ <sect1 xml:id="sec-testing-slurm">
+  <title>slurm</title>
+
+<screen>#!/usr/bin/env bash
+#Job name
+#SBATCH -J TEST_Slurm
+# Asking for one node
+#SBATCH -N 1
+# Output results message
+#SBATCH -o slurm-%j.out
+# Output error message
+#SBATCH -e slurm-%j.err
+module purge
+echo '=====my job informations ==== '
+echo 'Node List: ' $SLURM_NODELIST
+echo 'my jobID: ' $SLURM_JOB_ID
+echo 'Partition: ' $SLURM_JOB_PARTITION
+echo 'submit directory:' $SLURM_SUBMIT_DIR
+echo 'submit host:' $SLURM_SUBMIT_HOST
+echo 'In the directory: `pwd`'
+echo 'As the user: `whoami`'</screen>
+
+<screen>#!/usr/bin/env bash
+#Job name
+#S -J plop
+# Asking for one node
+#S -N 8
+module load gnu
+module load openmpi
+mpirun -n 8 /export/mpi_hello_world</screen>
+
+<screen>sbatch -n 8 run_mpi_test.sh</screen>
+
+ </sect1>
+ <!--
+ <sect1 xml:id="sec-testing-ganglia">
+  <title>ganglia</title>
+  <para>
+    TOFIX
+  </para>
+ </sect1>
+ -->
+ <sect1 xml:id="sec-testing-mpi">
+  <title>How to quickly test MPI</title>
+  <para>
+   This section describes how to quickly test MPI on your cluster.
+  </para>
+  <procedure>
+   <step>
+    <para>Install all needed components</para>
+   </step>
+   <step>
+    <para>Create an NFS export directory for the <literal>mpiuser</literal>
+    to get access from all nodes to a share dir (<literal>/export</literal>)</para>
+   </step>
+   <step>
+    <para>create the <literal>mpiuser</literal></para>
+   </step>
+   <step>
+    <para>build a mpi test code</para>
+   </step>
+   <step>
+    <para>test the mpi code over all nodes</para>
+   </step>
+  </procedure>
+ </sect1>
+
+ <sect1 xml:id="sec-testing-install">
+  <title>Installation</title>
+  <para>
+   To be able to test MPI on your cluster you need to install different component
+   to get the expected services.
+  </para>
+  <para>
+   All nodes needs to access the NFS server, so on all nodes install
+   <literal>nfs-utils</literal> and enable the service:
+  </para>
+
+<screen>zypper in -y nfs-utils
+systemctl enable nfs
+systemctl start nfs</screen>
+
+  <para>
+   You should install if this is not yet done needed libraries:
+  </para>
+
+<screen>zypper in -y patterns-hpc-compute_node patterns-hpc-libraries</screen>
+
+ </sect1>
+
+ <sect1 xml:id="sec-testing-buildmpi">
+  <title>Build MPI test</title>
+
+<screen>module load gnu &amp;&amp; module load openmpi &amp;&amp; mpirun --hostfile /etc/nodes -n 8 /export/mpi_hello_world</screen>
+
+ </sect1>
+
+ <sect1 xml:id="sec-testing-nfsserver">
+  <title>Setup the NFS server</title>
+
+<screen>mkdir /export
+echo '/export    *(rw,root_squash,sync,no_subtree_check)' > /etc/exports
+systemctl enable nfs-server.service
+systemctl restart nfs-server.service
+exportfs</screen>
+
+<screen>useradd -d /export -g users -G slurm -M -p \"PASSWORD\" -u 666 mpitest</screen>
+
+<screen>mkdir -p /export/.ssh
+${NODENAME}1:/export/.ssh/authorized_keys
+chown mpitest.users -R /export/
+ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+cat > ~/.ssh/config</screen>
+
+<screen>mount ${NODENAME}1:/export /export</screen>
+
+<screen>#!/bin/sh
+module load gnu
+module load openmpi
+mpicc -o mpi_hello_world mpi_hello_world.c</screen>
+
+ </sect1>
+
+</chapter>

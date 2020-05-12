@@ -1,0 +1,9 @@
+# DC file for SLE HPC guide
+
+MAIN="MAIN.hpc-guide.xml"
+ROOTID=book-hpc
+
+PROFOS="sles"
+
+STYLEROOT="/usr/share/xml/docbook/stylesheet/opensuse2013-ns"
+FALLBACK_STYLEROOT="/usr/share/xml/docbook/stylesheet/suse-ns"
