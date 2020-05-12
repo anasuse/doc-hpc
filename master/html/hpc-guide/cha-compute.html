@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Compute | Example Guide | SUSE Linux Enterprise High Performance Computing 15 SP2</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><link rel="stylesheet" type="text/css" href="static/css/brand.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using openSUSE XSL Stylesheets 2.0.13 (based on DocBook XSL Stylesheets 1.78.1) - chunked" /><meta name="product-name" content="SUSE Linux Enterprise High Performance Computing" /><meta name="product-number" content="15 SP2" /><meta name="book-title" content="Example Guide" /><meta name="chapter-title" content="Chapter 7. Compute" /><meta name="description" content="What is this chapter about?" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="assignee@suse.com" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="High Performance Computing" /><link rel="home" href="index.html" title="Example Guide" /><link rel="up" href="part-compute.html" title="Part VII. Compute" /><link rel="prev" href="part-compute.html" title="Part VII. Compute" /><link rel="next" href="part-testing.html" title="Part VIII. Testing" /><script type="text/javascript">
+
+var protocol = window.location.protocol.toLowerCase();
+if ( protocol != 'file:' ) {
+  var agent = navigator.userAgent.toLowerCase();
+  var wanted = ( protocol == 'https:') ? 'https' : 'http';
+  var file = 'fonts.css';
+  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
+}
+else {
+   document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Example Guide"><span class="book-icon">Example Guide</span></a><span> › </span><a class="crumb" href="part-compute.html">Compute</a><span> › </span><a class="crumb" href="cha-compute.html">Compute</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Example Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="preface-example.html"><span class="number"> </span><span class="name">About This Guide</span></a></li><li class="inactive"><a href="part-intro.html"><span class="number">I </span><span class="name">Introduction</span></a><ol><li class="inactive"><a href="cha-introduction.html"><span class="number">1 </span><span class="name">SUSE Linux Enterprise High Performance Computing 15 SP2</span></a></li></ol></li><li class="inactive"><a href="part-inst.html"><span class="number">II </span><span class="name">Installation</span></a><ol><li class="inactive"><a href="installation.html"><span class="number">2 </span><span class="name">Installation and Upgrade</span></a></li></ol></li><li class="inactive"><a href="part-remote.html"><span class="number">III </span><span class="name">Remote Administration</span></a><ol><li class="inactive"><a href="cha-remote.html"><span class="number">3 </span><span class="name">Remote Administration</span></a></li></ol></li><li class="inactive"><a href="part-nodes.html"><span class="number">IV </span><span class="name">Nodes</span></a><ol><li class="inactive"><a href="cha-nodes.html"><span class="number">4 </span><span class="name">Nodes</span></a></li></ol></li><li class="inactive"><a href="part-sched.html"><span class="number">V </span><span class="name">Scheduler</span></a><ol><li class="inactive"><a href="cha-scheduler.html"><span class="number">5 </span><span class="name">Scheduler</span></a></li></ol></li><li class="inactive"><a href="part-monitoring.html"><span class="number">VI </span><span class="name">Monitoring</span></a><ol><li class="inactive"><a href="cha-monitoring.html"><span class="number">6 </span><span class="name">Monitoring</span></a></li></ol></li><li class="inactive"><a href="part-compute.html"><span class="number">VII </span><span class="name">Compute</span></a><ol><li class="inactive"><a href="cha-compute.html"><span class="number">7 </span><span class="name">Compute</span></a></li></ol></li><li class="inactive"><a href="part-testing.html"><span class="number">VIII </span><span class="name">Testing</span></a><ol><li class="inactive"><a href="cha-testing.html"><span class="number">8 </span><span class="name">Testing your cluster</span></a></li></ol></li><li class="inactive"><a href="app-example-doc-update.html"><span class="number">A </span><span class="name">Documentation Updates</span></a></li><li class="inactive"><a href="apb.html"><span class="number">B </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Part VII. Compute" href="part-compute.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part VIII. Testing" href="part-testing.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Example Guide"><span class="book-icon">Example Guide</span></a><span> › </span><a class="crumb" href="part-compute.html">Compute</a><span> › </span><a class="crumb" href="cha-compute.html">Compute</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Part VII. Compute" href="part-compute.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part VIII. Testing" href="part-testing.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div xml:lang="en" class="chapter " id="cha-compute" lang="en"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname">SUSE Linux Enterprise High Performance Computing</span> <span class="productnumber">15 SP2</span></div><div><h2 class="title"><span class="number">7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Compute</span> </h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>cha-compute</li></ul></div></div><div><div class="abstract"><div class="abstract-title-wrap"><h6 class="abstract-title">Abstract<a title="Permalink" class="permalink" href="cha-compute.html#id-1.9.2.2.1">#</a></h6></div><p>
+    What is this chapter about?
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha-compute.html#sec-compute-lmod"><span class="number">7.1 </span><span class="name">Lmod — Lua-based Environment Modules</span></a></span></dt><dt><span class="sect1"><a href="cha-compute.html#sec-compute-lib"><span class="number">7.2 </span><span class="name">HPC Libraries</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-compute-lmod"><div class="titlepage"><div><div><h2 class="title" id="sec-compute-lmod"><span class="number">7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Lmod — Lua-based Environment Modules</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec-compute-lmod">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec-compute-lmod</li></ul></div></div></div></div><p>
+   Lmod is an advanced environment module system which allows the
+   installation of multiple versions of a program or shared library, and
+   helps configure the system environment for the use of a specific
+   version. It
+   supports hierarchical library dependencies and makes sure that the
+   correct version of dependent libraries are selected. Environment
+   Modules-enabled library packages supplied with the HPC module support
+   parallel installation of different versions and flavors of the same
+   library or binary and are supplied with appropriate
+   <code class="literal">lmod</code> module files.
+  </p><div class="sect2 " id="sec2-compute-lmod-basic"><div class="titlepage"><div><div><h3 class="title" id="sec2-compute-lmod-basic"><span class="number">7.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installation and Basic Usage</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-compute-lmod-basic">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-basic</li></ul></div></div></div></div><p>
+    To install Lmod, run: <code class="command">zypper in lua-lmod</code>.
+   </p><p>
+    Before Lmod can be used, an init file needs to be sourced from the
+    initialization file of your interactive shell. The following init files
+    are available:
+   </p><div class="verbatim-wrap"><pre class="screen">/usr/share/lmod/&lt;lmod_version&gt;/init/bash
+ /usr/share/lmod/&lt;lmod_version&gt;/init/ksh
+ /usr/share/lmod/&lt;lmod_version&gt;/init/tcsh
+ /usr/share/lmod/&lt;lmod_version&gt;/init/zsh
+ /usr/share/lmod/&lt;lmod_version&gt;/init/sh</pre></div><p>
+    Pick the one appropriate for your shell. Then add the following to the
+    init file of your shell:
+   </p><div class="verbatim-wrap"><pre class="screen">. /usr/share/lmod/&lt;LMOD_VERSION&gt;/init/&lt;INIT-FILE&gt;</pre></div><p>
+    To obtain <code class="literal">&lt;lmod_version&gt;</code>, run:
+   </p><div class="verbatim-wrap"><pre class="screen">rpm -q lua-lmod | sed "s/.*-\([^-]\+\)-.*/\1/"</pre></div><p>
+    The init script adds the command <code class="command">module</code>.
+   </p></div><div class="sect2 " id="sec2-compute-lmod-lista"><div class="titlepage"><div><div><h3 class="title" id="sec2-compute-lmod-lista"><span class="number">7.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Listing Available Modules</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-compute-lmod-lista">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-lista</li></ul></div></div></div></div><p>
+    To list the available all available modules, run: <code class="command">module
+    spider</code>. To show all modules which can be loaded with the
+    currently loaded modules, run: <code class="command">module avail</code>. A
+    module name consists of a name and a version string separated by a
+    <code class="literal">/</code> character. If more than one version is available
+    for a certain module name, the default version (marked by
+    <code class="literal">*</code>) or (if this is not set) the one with the highest
+    version number is loaded. To refer to a specific module version, the
+    full string <code class="literal"><em class="replaceable ">NAME</em>/<em class="replaceable ">VERSION</em></code>
+    may be used.
+   </p></div><div class="sect2 " id="sec2-compute-lmod-listl"><div class="titlepage"><div><div><h3 class="title" id="sec2-compute-lmod-listl"><span class="number">7.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Listing Loaded Modules</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-compute-lmod-listl">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-listl</li></ul></div></div></div></div><p>
+    <code class="command">module list</code> shows all currently loaded modules. Refer
+    to <code class="command">module help</code> for a short help on the module command
+    and <code class="command">module help <em class="replaceable ">MODULE-NAME</em></code>
+    for a help on the
+    particular module. Note that the <code class="command">module</code> command is available
+    only when you log in after installing <code class="literal">lua-lmod</code>.
+   </p></div><div class="sect2 " id="sec2-compute-lmod-info"><div class="titlepage"><div><div><h3 class="title" id="sec2-compute-lmod-info"><span class="number">7.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Gathering Information About a Module</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-compute-lmod-info">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-info</li></ul></div></div></div></div><p>
+    To get information about a particular module, run: <code class="command">module
+    whatis <em class="replaceable ">MODULE-NAME</em></code> To load a module,
+    run:
+    <code class="command">module load <em class="replaceable ">MODULE-NAME</em></code>. This
+    will ensure
+    that your environment is modified (that is, the <code class="literal">PATH</code> and
+    <code class="literal">LD_LIBRARY_PATH</code> and other environment variables are
+    prepended) such that binaries and libraries provided by the respective
+    modules are found. To run a program compiled against this library, the
+    appropriate <code class="command">module load</code> commands must be issued
+    beforehand.
+   </p></div><div class="sect2 " id="sec2-compute-lmod-load"><div class="titlepage"><div><div><h3 class="title" id="sec2-compute-lmod-load"><span class="number">7.1.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Loading Modules</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-compute-lmod-load">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-load</li></ul></div></div></div></div><p>
+    The <code class="command">module load <em class="replaceable ">MODULE</em></code>
+    command needs to be
+    run in the shell from which the module is to be used. Some modules
+    require a compiler toolchain or MPI flavor module to be loaded before
+    they are available for loading.
+   </p></div><div class="sect2 " id="sec2-compute-lmod-env"><div class="titlepage"><div><div><h3 class="title" id="sec2-compute-lmod-env"><span class="number">7.1.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Environment Variables</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-compute-lmod-env">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-env</li></ul></div></div></div></div><p>
+    If the respective development packages are installed, build time
+    environment variables like <code class="literal">LIBRARY_PATH</code>,
+    <code class="literal">CPATH</code>, <code class="literal">C_INCLUDE_PATH</code> and
+    <code class="literal">CPLUS_INCLUDE_PATH</code> will be set up to include the
+    directories containing the appropriate header and library files.
+    However, some compiler and linker commands may not honor these. In this
+    case, use the appropriate options together with the environment
+    variables <code class="literal">-I <em class="replaceable ">PACKAGE_NAME</em>_INC</code>
+    and <code class="literal">-L <em class="replaceable ">PACKAGE_NAME</em>_LIB</code>
+    to add the include and library paths
+    to the command lines of the compiler and linker.
+   </p></div><div class="sect2 " id="sec2-compute-lmod-moreinfo"><div class="titlepage"><div><div><h3 class="title" id="sec2-compute-lmod-moreinfo"><span class="number">7.1.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">For More Information</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-compute-lmod-moreinfo">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-moreinfo</li></ul></div></div></div></div><p>
+    For more information on Lmod, see
+    <a class="link" href="https://lmod.readthedocs.org" target="_blank">https://lmod.readthedocs.org</a>.
+   </p></div></div><div class="sect1 " id="sec-compute-lib"><div class="titlepage"><div><div><h2 class="title" id="sec-compute-lib"><span class="number">7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">HPC Libraries</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec-compute-lib">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec-compute-lib</li></ul></div></div></div></div><p>
+   Library packages which support environment modules follow a distinctive
+   naming scheme: all packages have the compiler suite and, if built with
+   MPI support, the MPI flavor in their name:
+   <code class="literal">*-[<em class="replaceable ">MPI_FLAVOR</em>]-<em class="replaceable ">COMPILER</em>-hpc*</code>. To
+   support a parallel installation of multiple versions of a library
+   package, the package name contains the version number (with dots
+   <code class="literal">.</code> replaced by underscores <code class="literal">_</code>). To
+   simplify the installation of a library, <code class="literal">master</code>
+   -packages are supplied which will ensure that the latest version of a
+   package is installed. When these <code class="literal">master</code> packages are
+   updated, the latest
+   version of the respective library packages will be installed while
+   leaving previous versions installed. Library packages are split between
+   runtime and compile time packages. The compile time packages typically
+   supply include files and .so-files for shared libraries. Compile time
+   package names end with <code class="literal">-devel</code>. For some libraries
+   static (<code class="literal">.a</code>) libraries are supplied as well, package
+   names for these end with <code class="literal">-devel-static</code>.
+  </p><p>
+   As an example: Package names of the ScaLAPACK library version 2.0.2 built
+   with GCC for Open MPI v2:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     library package:
+     <span class="package">libscalapack2_2_1_0-gnu-openmpi2-hpc</span>
+    </p></li><li class="listitem "><p>
+     library master package: <span class="package">libscalapack2-gnu-openmpi2-hpc</span>
+    </p></li><li class="listitem "><p>
+     development package:
+     <span class="package">libscalapack2_2_1_0-gnu-openmpi2-hpc-devel</span>
+    </p></li><li class="listitem "><p>
+     development master package:
+     <span class="package">libscalapack2-gnu-openmpi2-hpc-devel</span>
+    </p></li><li class="listitem "><p>
+     static library package:
+     <span class="package">libscalapack2_2_1_0-gnu-openmpi2-hpc-devel-static</span>
+    </p></li></ul></div><p>
+   (Note that the digit <code class="literal">2</code> appended to the library name
+   denotes the <code class="literal">.so</code> version of the library).
+  </p><p>
+   To install a library packages run <code class="command">zypper in
+   <em class="replaceable ">LIBRARY-MASTER-PACKAGE</em></code>. To install a
+   development file,
+   run <code class="command">zypper in <em class="replaceable ">LIBRARY-DEVEL-MASTER-PACKAGE</em></code>.
+  </p><p>
+   Presently, the GNU compiler collection version 4.8 as provided with SUSE
+   Linux Enterprise 15 and the MPI flavors Open MPI v.2 and MVAPICH2 are
+   supported.
+  </p><div class="sect2 " id="sec2-lib-fftw"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-fftw"><span class="number">7.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">FFTW HPC Library — Discrete Fourier Transforms</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-fftw">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-fftw</li></ul></div></div></div></div><p>
+    <code class="literal">FFTW</code> is a C subroutine library for computing the
+    Discrete Fourier Transform (DFT) in one or more dimensions, of both real
+    and complex data, and of arbitrary input size.
+   </p><p>
+    This library is available as both a serial and an MPI-enabled variant.
+    This module requires a compiler toolchain module loaded. To select an
+    MPI variant, the respective MPI module needs to be loaded beforehand. To
+    load this module, run:
+   </p><div class="verbatim-wrap"><pre class="screen">module load fftw3</pre></div><p>
+    List of master packages:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <code class="literal">libfftw3-gnu-hpc</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">fftw3-gnu-hpc-devel</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">libfftw3-gnu-openmpi1-hpc</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">fftw3-gnu-openmpi1-hpc-devel</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">libfftw3-gnu-mvapich2-hpc</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">fftw3-gnu-mvapich2-hpc-devel</code>
+     </p></li></ul></div><p>
+    For general information about Lmod and modules, see
+    <a class="xref" href="cha-compute.html#sec-compute-lmod" title="7.1. Lmod — Lua-based Environment Modules">Section 7.1, “Lmod — Lua-based Environment Modules”</a>.
+   </p></div><div class="sect2 " id="sec2-lib-hdf5"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-hdf5"><span class="number">7.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">HDF5 HPC Library — Model, Library, File Format for Storing and Managing Data</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-hdf5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-hdf5</li></ul></div></div></div></div><p>
+    HDF5 is a data model, library, and file format for storing and managing
+    data. It supports an unlimited variety of data types, and is designed for
+    flexible and efficient I/O and for high volume and complex data. HDF5 is
+    portable and extensible, allowing applications to evolve in their use of
+    HDF5.
+   </p><p>
+    There are serial and MPI variants of this library available. All flavors
+    require loading a compiler toolchain module beforehand. The MPI variants
+    also require loading the correct MPI flavor module.
+   </p><p>
+    To load the highest available serial version of this module run:
+   </p><div class="verbatim-wrap"><pre class="screen">module load hdf5</pre></div><p>
+    When an MPI flavor is loaded, the MPI version of this module can be
+    loaded by:
+   </p><div class="verbatim-wrap"><pre class="screen">module load phpdf5</pre></div><p>
+    List of master packages:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <span class="package">hdf5-examples</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">hdf5-gnu-hpc-devel</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">libhdf5-gnu-hpc</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">libhdf5_cpp-gnu-hpc</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">libhdf5_fortran-gnu-hpc</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">libhdf5_hl_cpp-gnu-hpc</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">libhdf5_hl_fortran-gnu-hpc</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">hdf5-gnu-openmpi1-hpc-devel</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">libhdf5-gnu-openmpi1-hpc</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">libhdf5_fortran-gnu-openmpi1-hpc</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">libhdf5_hl_fortran-gnu-openmpi1-hpc</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">hdf5-gnu-mvapich2-hpc-devel</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">libhdf5-gnu-mvapich2-hpc</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">libhdf5_fortran-gnu-mvapich2-hpc</span>
+     </p></li></ul></div><p>
+    For general information about Lmod and modules, see <a class="xref" href="cha-compute.html#sec-compute-lmod" title="7.1. Lmod — Lua-based Environment Modules">Section 7.1, “Lmod — Lua-based Environment Modules”</a>
+   </p></div><div class="sect2 " id="sec2-lib-netcdf"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-netcdf"><span class="number">7.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">NetCDF HPC Library — Implementation of Self-Describing Data Formats</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-netcdf">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-netcdf</li></ul></div></div></div></div><p>
+    The NetCDF software libraries for C, C++, FORTRAN, and Perl are a set of
+    software libraries and self-describing, machine-independent data formats
+    that support the creation, access, and sharing of array-oriented
+    scientific data.
+   </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect5 bridgehead"><h6 class="title" id="id-1.9.2.4.10.3"><span class="name"><code class="literal">netcdf</code> Packages</span><a title="Permalink" class="permalink" href="cha-compute.html#id-1.9.2.4.10.3">#</a></h6></div><p>
+    The packages with names starting with <code class="literal">netcdf</code> provide
+    C bindings for the NetCDF API. These are available with and without MPI
+    support.
+   </p><p>
+    There are serial and MPI variants of this library available. All flavors
+    require loading a compiler toolchain module beforehand. The MPI variants
+    also require loading the correct MPI flavor module.
+   </p><p>
+    The MPI variant becomes available when the MPI module is loaded. Both
+    variants require loading a compiler toolchain module beforehand. To
+    load the highest version of the non-MPI <code class="literal">netcdf</code> module,
+    run:
+   </p><div class="verbatim-wrap"><pre class="screen">module load netcdf</pre></div><p>
+    To load the highest available MPI version of this module, run:
+   </p><div class="verbatim-wrap"><pre class="screen">module load pnetcdf</pre></div><p>
+    List of master packages:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <span class="package">netcdf-gnu-hpc</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">netcdf-gnu-hpc-devel</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">netcdf-gnu-hpc</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">netcdf-gnu-hpc-devel</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">netcdf-gnu-openmpi1-hpc</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">netcdf-gnu-openmpi1-hpc-devel</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">netcdf-gnu-mvapich2-hpc</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">netcdf-gnu-mvapich2-hpc-devel</span>
+     </p></li></ul></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect5 bridgehead"><h6 class="title" id="id-1.9.2.4.10.12"><span class="name"><code class="literal">netcdf-cxx</code> Packages</span><a title="Permalink" class="permalink" href="cha-compute.html#id-1.9.2.4.10.12">#</a></h6></div><p>
+    <span class="package">netcdf-cxx4</span> provides a C++ binding for the NetCDF
+    API.
+   </p><p>
+    This module requires loading a compiler toolchain module beforehand. To
+    load this module, run:
+   </p><div class="verbatim-wrap"><pre class="screen">module load netcdf-cxx4</pre></div><p>
+    List of master packages:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <code class="literal">libnetcdf-cxx4-gnu-hpc</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">libnetcdf-cxx4-gnu-hpc-devel</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">netcdf-cxx4-gnu-hpc-tools</code>
+     </p></li></ul></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect5 bridgehead"><h6 class="title" id="id-1.9.2.4.10.18"><span class="name"><code class="literal">netcdf-fortran</code> Packages</span><a title="Permalink" class="permalink" href="cha-compute.html#id-1.9.2.4.10.18">#</a></h6></div><p>
+    The <code class="literal">netcdf-fortran</code> packages provide FORTRAN bindings
+    for the NetCDF API, with and without MPI support.
+   </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect5 bridgehead"><h6 class="title" id="id-1.9.2.4.10.20"><span class="name">For More Information</span><a title="Permalink" class="permalink" href="cha-compute.html#id-1.9.2.4.10.20">#</a></h6></div><p>
+    For general information about Lmod and modules, see
+    <a class="xref" href="cha-compute.html#sec-compute-lmod" title="7.1. Lmod — Lua-based Environment Modules">Section 7.1, “Lmod — Lua-based Environment Modules”</a>.
+   </p></div><div class="sect2 " id="sec2-lib-numpy"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-numpy"><span class="number">7.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">NumPy Python Library</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-numpy">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-numpy</li></ul></div></div></div></div><p>
+    NumPy is a general-purpose array-processing package designed to
+    efficiently manipulate large multi-dimensional arrays of arbitrary
+    records without sacrificing too much speed for small multi-dimensional
+    arrays.
+   </p><p>
+    NumPy is built on the Numeric code base and adds features introduced by
+    numarray as well as an extended C API and the ability to create arrays
+    of arbitrary type which also makes NumPy suitable for interfacing with
+    general-purpose data-base applications.
+   </p><p>
+    There are also basic facilities for discrete Fourier transform, basic
+    linear algebra and random number generation.
+   </p><p>
+    This package is available both for Python 2 and Python 3. The specific
+    compiler toolchain and MPI library flavor modules must be loaded for this
+    library. The correct library module for the Python version used needs to be
+    specified when loading this module. To load this module, run:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      for Python 2: <code class="literal">module load python2-numpy</code>
+     </p></li><li class="listitem "><p>
+      for Python 3: <code class="literal">module load python3-numpy</code>
+     </p></li></ul></div><p>
+    List of master packages:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <code class="literal">python2-numpy-gnu-hpc</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">python2-numpy-gnu-hpc-devel</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">python3-numpy-gnu-hpc</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">python3-numpy-gnu-hpc-devel</code>
+     </p></li></ul></div></div><div class="sect2 " id="sec2-lib-blas"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-blas"><span class="number">7.2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OpenBLAS Library — Optimized BLAS Library</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-blas">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-blas</li></ul></div></div></div></div><p>
+    OpenBLAS is an optimized BLAS (Basic Linear Algebra Subprograms) library
+    based on GotoBLAS2 1.3, BSD version. It provides the BLAS API. It is
+    shipped as a package enabled for environment modules and thus requires
+    using Lmod to select a version. There are two variants of this library,
+    an OpenMP-enabled variant and a pthreads variant.
+   </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect5 bridgehead"><h6 class="title" id="id-1.9.2.4.12.3"><span class="name">OpenMP-Enabled Variant</span><a title="Permalink" class="permalink" href="cha-compute.html#id-1.9.2.4.12.3">#</a></h6></div><p>
+    The OpenMP variant covers all use cases:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <span class="bold"><strong>Programs using OpenMP.</strong></span> This requires
+      the OpenMP-enabled library version to function correctly.
+     </p></li><li class="listitem "><p>
+      <span class="bold"><strong>Programs using pthreads.</strong></span> This
+      requires an OpenBLAS library without pthread support. This can be
+      achieved with the OpenMP-version. We recommend limiting the number of
+      threads that are used to 1 by setting the environment variable
+      <code class="literal">OMP_NUM_THREADS=1</code>.
+     </p></li><li class="listitem "><p>
+      <span class="bold"><strong>Programs without pthreads and without
+      OpenMP.</strong></span> Such programs can still take advantage of the
+      OpenMP optimization in the library by linking against the OpenMP
+      variant of the library.
+     </p></li></ul></div><p>
+    When linking statically, ensure that <code class="literal">libgomp.a</code> is
+    included by adding the linker flag <code class="literal">-lgomp</code>.
+   </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect5 bridgehead"><h6 class="title" id="id-1.9.2.4.12.7"><span class="name">pthreads Variant</span><a title="Permalink" class="permalink" href="cha-compute.html#id-1.9.2.4.12.7">#</a></h6></div><p>
+    The pthreads variant of the OpenBLAS library can improve the performance
+    of single-threaded programs. The number of threads used can be
+    controlled with the environment variable
+    <code class="literal">OPENBLAS_NUM_THREADS</code>.
+   </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect5 bridgehead"><h6 class="title" id="id-1.9.2.4.12.9"><span class="name">Installation and Usage</span><a title="Permalink" class="permalink" href="cha-compute.html#id-1.9.2.4.12.9">#</a></h6></div><p>
+    This module requires loading a compiler toolchain beforehand. To select
+    the latest version of this module provided, run:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      OpenMP version:
+     </p><div class="verbatim-wrap"><pre class="screen">module load openblas-pthreads</pre></div></li><li class="listitem "><p>
+      pthreads version:
+     </p><div class="verbatim-wrap"><pre class="screen">module load openblas</pre></div></li></ul></div><p>
+    List of master package for:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <code class="literal">libopenblas-gnu-hpc</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">libopenblas-gnu-hpc-devel</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">libopenblas-pthreads-gnu-hpc</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">libopenblas-pthreads-gnu-hpc-devel</code>
+     </p></li></ul></div><p>
+    For general information about Lmod and modules, see
+    <a class="xref" href="cha-compute.html#sec-compute-lmod" title="7.1. Lmod — Lua-based Environment Modules">Section 7.1, “Lmod — Lua-based Environment Modules”</a>.
+   </p></div><div class="sect2 " id="sec2-lib-papi"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-papi"><span class="number">7.2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">PAPI HPC Library — Consistent Interface for Hardware Performance Counters</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-papi">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-papi</li></ul></div></div></div></div><p>
+    PAPI (package <span class="package">papi</span>) provides a tool with a
+    consistent interface and methodology for use of the performance counter
+    hardware found in most major microprocessors.
+   </p><p>
+    This package serves all compiler toolchains and does not require a
+    compiler toolchain to be selected. The latest version provided can be
+    selected by running:
+   </p><div class="verbatim-wrap"><pre class="screen">module load papi</pre></div><p>
+    List of master packages:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <span class="package">papi-hpc</span>
+     </p></li><li class="listitem "><p>
+      <span class="package">papi-hpc-devel</span>
+     </p></li></ul></div><p>
+    For general information about Lmod and modules, see
+    <a class="xref" href="cha-compute.html#sec-compute-lmod" title="7.1. Lmod — Lua-based Environment Modules">Section 7.1, “Lmod — Lua-based Environment Modules”</a>.
+   </p></div><div class="sect2 " id="sec2-lib-petsc"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-petsc"><span class="number">7.2.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">PETSc HPC Library — Solver for Partial Differential Equations</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-petsc">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-petsc</li></ul></div></div></div></div><p>
+    PETSc is a suite of data structures and routines for the scalable
+    (parallel) solution of scientific applications modeled by partial
+    differential equations.
+   </p><p>
+    This module requires loading a compiler toolchain as well as an MPI
+    library flavor beforehand. To load this module, run:
+   </p><div class="verbatim-wrap"><pre class="screen">module load petsc</pre></div><p>
+    List of master packages:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <code class="literal">libpetsc-gnu-openmpi1-hpc</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">petsc-gnu-openmpi1-hpc-devel</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">libpetsc-gnu-mvapich2-hpc</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">petsc-gnu-mvapich2-hpc-devel</code>
+     </p></li></ul></div><p>
+    For general information about Lmod and modules, see
+    <a class="xref" href="cha-compute.html#sec-compute-lmod" title="7.1. Lmod — Lua-based Environment Modules">Section 7.1, “Lmod — Lua-based Environment Modules”</a>.
+   </p></div><div class="sect2 " id="sec2-lib-scala"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-scala"><span class="number">7.2.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">ScaLAPACK HPC Library — LAPACK Routines</span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-scala">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-scala</li></ul></div></div></div></div><p>
+    The library ScaLAPACK (short for "Scalable LAPACK") includes a subset of
+    LAPACK routines designed for distributed memory MIMD-parallel computers.
+   </p><p>
+    This library requires loading both a compiler toolchain and an MPI
+    library flavor beforehand. To load this library, run:
+   </p><div class="verbatim-wrap"><pre class="screen">module load scalapack</pre></div><p>
+    List of master packages:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <code class="literal">libblacs2-gnu-openmpi1-hpc</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">libblacs2-gnu-openmpi1-hpc-devel</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">libscalapack2-gnu-openmpi1-hpc</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">libscalapack2-gnu-openmpi1-hpc-devel</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">libblacs2-gnu-mvapich2-hpc</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">libblacs2-gnu-mvapich2-hpc-devel</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">libscalapack2-gnu-mvapich2-hpc</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">libscalapack2-gnu-mvapich2-hpc-devel</code>
+     </p></li></ul></div><p>
+    For general information about Lmod and modules, see
+    <a class="xref" href="cha-compute.html#sec-compute-lmod" title="7.1. Lmod — Lua-based Environment Modules">Section 7.1, “Lmod — Lua-based Environment Modules”</a>.
+   </p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="part-testing.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Part VIII </span>Testing</span></a><a class="nav-link" href="part-compute.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Part VII </span>Compute</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p></div></div></body></html>

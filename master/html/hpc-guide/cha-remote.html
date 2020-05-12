@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Remote Administration | Example Guide | SUSE Linux Enterprise High Performance Computing 15 SP2</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><link rel="stylesheet" type="text/css" href="static/css/brand.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using openSUSE XSL Stylesheets 2.0.13 (based on DocBook XSL Stylesheets 1.78.1) - chunked" /><meta name="product-name" content="SUSE Linux Enterprise High Performance Computing" /><meta name="product-number" content="15 SP2" /><meta name="book-title" content="Example Guide" /><meta name="chapter-title" content="Chapter 3. Remote Administration" /><meta name="description" content="What is this chapter about?" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="assignee@suse.com" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="High Performance Computing" /><link rel="home" href="index.html" title="Example Guide" /><link rel="up" href="part-remote.html" title="Part III. Remote Administration" /><link rel="prev" href="part-remote.html" title="Part III. Remote Administration" /><link rel="next" href="part-nodes.html" title="Part IV. Nodes" /><script type="text/javascript">
+
+var protocol = window.location.protocol.toLowerCase();
+if ( protocol != 'file:' ) {
+  var agent = navigator.userAgent.toLowerCase();
+  var wanted = ( protocol == 'https:') ? 'https' : 'http';
+  var file = 'fonts.css';
+  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
+}
+else {
+   document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Example Guide"><span class="book-icon">Example Guide</span></a><span> › </span><a class="crumb" href="part-remote.html">Remote Administration</a><span> › </span><a class="crumb" href="cha-remote.html">Remote Administration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Example Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="preface-example.html"><span class="number"> </span><span class="name">About This Guide</span></a></li><li class="inactive"><a href="part-intro.html"><span class="number">I </span><span class="name">Introduction</span></a><ol><li class="inactive"><a href="cha-introduction.html"><span class="number">1 </span><span class="name">SUSE Linux Enterprise High Performance Computing 15 SP2</span></a></li></ol></li><li class="inactive"><a href="part-inst.html"><span class="number">II </span><span class="name">Installation</span></a><ol><li class="inactive"><a href="installation.html"><span class="number">2 </span><span class="name">Installation and Upgrade</span></a></li></ol></li><li class="inactive"><a href="part-remote.html"><span class="number">III </span><span class="name">Remote Administration</span></a><ol><li class="inactive"><a href="cha-remote.html"><span class="number">3 </span><span class="name">Remote Administration</span></a></li></ol></li><li class="inactive"><a href="part-nodes.html"><span class="number">IV </span><span class="name">Nodes</span></a><ol><li class="inactive"><a href="cha-nodes.html"><span class="number">4 </span><span class="name">Nodes</span></a></li></ol></li><li class="inactive"><a href="part-sched.html"><span class="number">V </span><span class="name">Scheduler</span></a><ol><li class="inactive"><a href="cha-scheduler.html"><span class="number">5 </span><span class="name">Scheduler</span></a></li></ol></li><li class="inactive"><a href="part-monitoring.html"><span class="number">VI </span><span class="name">Monitoring</span></a><ol><li class="inactive"><a href="cha-monitoring.html"><span class="number">6 </span><span class="name">Monitoring</span></a></li></ol></li><li class="inactive"><a href="part-compute.html"><span class="number">VII </span><span class="name">Compute</span></a><ol><li class="inactive"><a href="cha-compute.html"><span class="number">7 </span><span class="name">Compute</span></a></li></ol></li><li class="inactive"><a href="part-testing.html"><span class="number">VIII </span><span class="name">Testing</span></a><ol><li class="inactive"><a href="cha-testing.html"><span class="number">8 </span><span class="name">Testing your cluster</span></a></li></ol></li><li class="inactive"><a href="app-example-doc-update.html"><span class="number">A </span><span class="name">Documentation Updates</span></a></li><li class="inactive"><a href="apb.html"><span class="number">B </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Part III. Remote Administration" href="part-remote.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part IV. Nodes" href="part-nodes.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Example Guide"><span class="book-icon">Example Guide</span></a><span> › </span><a class="crumb" href="part-remote.html">Remote Administration</a><span> › </span><a class="crumb" href="cha-remote.html">Remote Administration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Part III. Remote Administration" href="part-remote.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part IV. Nodes" href="part-nodes.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div xml:lang="en" class="chapter " id="cha-remote" lang="en"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname">SUSE Linux Enterprise High Performance Computing</span> <span class="productnumber">15 SP2</span></div><div><h2 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Remote Administration</span> </h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>cha-remote</li></ul></div></div><div><div class="abstract"><div class="abstract-title-wrap"><h6 class="abstract-title">Abstract<a title="Permalink" class="permalink" href="cha-remote.html#id-1.5.2.2.1">#</a></h6></div><p>
+    What is this chapter about?
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha-remote.html#sec-remote-conman"><span class="number">3.1 </span><span class="name">ConMan — The Console Manager</span></a></span></dt><dt><span class="sect1"><a href="cha-remote.html#sec-remote-genders"><span class="number">3.2 </span><span class="name">Genders — Static Cluster Configuration Database</span></a></span></dt><dt><span class="sect1"><a href="cha-remote.html#sec-remote-pdsh"><span class="number">3.3 </span><span class="name">pdsh — Parallel Remote Shell Program</span></a></span></dt><dt><span class="sect1"><a href="cha-remote.html#sec-remote-powerman"><span class="number">3.4 </span><span class="name">PowerMan — Centralized Power Control for Clusters</span></a></span></dt><dt><span class="sect1"><a href="cha-remote.html#sec-remote-memkind"><span class="number">3.5 </span><span class="name">memkind — Heap Manager for Heterogeneous Memory Platforms and Mixed Memory Policies</span></a></span></dt><dt><span class="sect1"><a href="cha-remote.html#sec-remote-munge"><span class="number">3.6 </span><span class="name"><span class="emphasis"><em>munge</em></span> Authentication</span></a></span></dt><dt><span class="sect1"><a href="cha-remote.html#sec-remote-mrsh"><span class="number">3.7 </span><span class="name">mrsh/mrlogin — Remote Login Using <span class="emphasis"><em>munge</em></span> Authentication</span></a></span></dt><dt><span class="sect1"><a href="cha-remote.html#sec-remote-ssh"><span class="number">3.8 </span><span class="name">sshd config</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-remote-conman"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-conman"><span class="number">3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">ConMan — The Console Manager</span> <a title="Permalink" class="permalink" href="cha-remote.html#sec-remote-conman">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-conman</li></ul></div></div></div></div><p>
+   ConMan is a serial console management program designed to support a
+   large number of console devices and simultaneous users. It supports:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     local serial devices
+    </p></li><li class="listitem "><p>
+     remote terminal servers (via the telnet protocol)
+    </p></li><li class="listitem "><p>
+     IPMI Serial-Over-LAN (via FreeIPMI)
+    </p></li><li class="listitem "><p>
+     Unix domain sockets
+    </p></li><li class="listitem "><p>
+     external processes (for example, using 'expect' scripts for telnet,
+     ssh, or ipmi-sol connections)
+    </p></li></ul></div><p>
+   ConMan can be used for monitoring, logging and optionally timestamping
+   console device output.
+  </p><p>
+   To install ConMan, run <code class="literal">zypper in conman</code>.
+  </p><div id="id-1.5.2.3.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: <code class="systemitem">conmand</code> Sends Unencrypted Data</h6><p>
+    The daemon <code class="systemitem">conmand</code> sends
+    unencrypted data over the
+    network and its connections are not authenticated. Therefore, it should
+    be used locally only: Listening to the port
+    <code class="literal">localhost</code>. However, the IPMI console does offer
+    encryption. This makes <code class="literal">conman</code> a good tool for
+    monitoring a large number of such consoles.
+   </p></div><p>
+   Usage:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     ConMan comes with a number of expect-scripts. They can be found in the
+     directory <code class="filename">/usr/lib/conman/exec</code>.
+    </p></li><li class="listitem "><p>
+     Input to <code class="literal">conman</code> is not echoed in interactive mode.
+     This can be changed by entering the escape sequence
+     <code class="literal">&amp;E</code>.
+    </p></li><li class="listitem "><p>
+     When pressing <span class="keycap">Enter</span> in interactive mode, no line
+     feed is generated. To generate a line feed, press
+     <span class="keycap">Ctrl</span><span class="key-connector">–</span><span class="keycap">L</span>.
+    </p></li></ul></div><p>
+   For more information about options, see the man page of ConMan.
+  </p></div><div class="sect1 " id="sec-remote-genders"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-genders"><span class="number">3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Genders — Static Cluster Configuration Database</span> <a title="Permalink" class="permalink" href="cha-remote.html#sec-remote-genders">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-genders</li></ul></div></div></div></div><p>
+   Support for Genders has been added to the HPC module.
+  </p><p>
+   Genders is a static cluster configuration database used for
+   configuration management. It allows grouping and addressing sets of
+   hosts by attributes and is used by a variety of tools. The Genders
+   database is a text file which is usually replicated on each node in a
+   cluster.
+  </p><p>
+   Perl, Python, C, and C++ bindings are supplied with Genders, the
+   respective packages provide man pages or other documentation describing
+   the APIs.
+  </p><p>
+   To create the Genders database, follow the instructions and examples in
+   <code class="filename">/etc/genders</code> and check
+   <code class="filename">/usr/share/doc/packages/genders-base/TUTORIAL</code>.
+   Testing a configuration can be done with <code class="literal">nodeattr</code>
+   (for more information, see <code class="command">man 1 nodeattr</code>).
+  </p><p>
+   List of packages:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     <span class="package">genders</span>
+    </p></li><li class="listitem "><p>
+     <span class="package">genders-base</span>
+    </p></li><li class="listitem "><p>
+     <span class="package">genders-devel</span>
+    </p></li><li class="listitem "><p>
+     <span class="package">python-genders</span>
+    </p></li><li class="listitem "><p>
+     <span class="package">genders-perl-compat</span>
+    </p></li><li class="listitem "><p>
+     <span class="package">libgenders0</span>
+    </p></li><li class="listitem "><p>
+     <span class="package">libgendersplusplus2</span>
+    </p></li></ul></div></div><div class="sect1 " id="sec-remote-pdsh"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-pdsh"><span class="number">3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">pdsh — Parallel Remote Shell Program</span> <a title="Permalink" class="permalink" href="cha-remote.html#sec-remote-pdsh">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-pdsh</li></ul></div></div></div></div><p>
+   <code class="literal">pdsh</code> is a parallel remote shell which can be used
+   with multiple back-ends for remote connections. It can run a command on
+   multiple machines in parallel.
+  </p><p>
+   To install pdsh, run <code class="command">zypper in pdsh</code>.
+  </p><p>
+   On SLES 12, the back-ends <code class="literal">ssh</code>,
+   <code class="literal">mrsh</code>, and <code class="literal">exec</code> are supported. The
+   <code class="literal">ssh</code> back-end is the default. Non-default login methods
+   can be used by either setting the <code class="literal">PDSH_RCMD_TYPE</code>
+   environment variable or by using the <code class="literal">-R</code> command
+   argument.
+  </p><p>
+   When using the <code class="literal">ssh</code> back-end, it is important that a
+   non-interactive (that is, passwordless) login method is used.
+  </p><p>
+   The <code class="literal">mrsh</code> back-end requires the
+   <code class="literal">mrshd</code> to be running on the client. The
+   <code class="literal">mrsh</code> back-end does not require the use of reserved
+   sockets. Therefore, it does not suffer from port exhaustion when
+   executing commands on many machines in parallel. For information about
+   setting up the system to use this back-end, see
+  </p><p>
+   Remote machines can either be specified on the command line or
+   <code class="command">pdsh</code> can use a <code class="filename">machines</code> file
+   (<code class="filename">/etc/pdsh/machines</code>), dsh (Dancer's shell) style
+   groups or netgroups. Also, it can target nodes based on the currently
+   running Slurm jobs.
+  </p><p>
+   The different ways to select target hosts are realized by modules. Some
+   of these modules provide identical options to <code class="command">pdsh</code>.
+   The module loaded first will win and consume the option. Therefore, we
+   recommend limiting yourself to a single method and specifying this with
+   the <code class="literal">-M</code> option.
+  </p><p>
+   The <code class="filename">machines</code> file lists all target hosts one per
+   line. The appropriate netgroup can be selected with the
+   <code class="literal">-g</code> command line option.
+  </p><p>
+   The following host-list plugins for <code class="command">pdsh</code> are supported:
+   <code class="literal">machines</code>, <code class="literal">slurm</code>,
+   <code class="literal">netgroup</code> and <code class="literal">dshgroup</code>.
+   Each host-list plugin is provided in a separate package. This avoids
+   conflicts between command line options for different plugins which
+   happen to be identical and helps to keep installations small and free
+   of unneeded dependencies. Package dependencies have been set to prevent
+   installing plugins with conflicting command options. To install one of
+   the plugins, run:
+  </p><div class="verbatim-wrap"><pre class="screen">zypper in pdsh-<em class="replaceable ">PLUGIN_NAME</em></pre></div><p>
+   For more information, see the man page <code class="command">pdsh</code>.
+  </p></div><div class="sect1 " id="sec-remote-powerman"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-powerman"><span class="number">3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">PowerMan — Centralized Power Control for Clusters</span> <a title="Permalink" class="permalink" href="cha-remote.html#sec-remote-powerman">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-powerman</li></ul></div></div></div></div><p>
+   PowerMan allows manipulating remote power control devices (RPC) from a
+   central location. It can control:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     local devices connected to a serial port
+    </p></li><li class="listitem "><p>
+     RPCs listening on a TCP socket
+    </p></li><li class="listitem "><p>
+     RPCs which are accessed through an external program
+    </p></li></ul></div><p>
+   The communication to RPCs is controlled by <span class="quote">“<span class="quote">expect</span>”</span>-like
+   scripts. For a
+   list of currently supported devices, see the configuration file
+   <code class="filename">/etc/powerman/powerman.conf</code>.
+  </p><p>
+   To install PowerMan, run <code class="command">zypper in powerman</code>.
+  </p><p>
+   To configure it, include the appropriate device file for your RPC
+   (<code class="filename">/etc/powerman/*.dev</code>) in
+   <code class="filename">/etc/powerman/powerman.conf</code> and add devices and
+   nodes. The device <span class="quote">“<span class="quote">type</span>”</span> needs to match the
+   <span class="quote">“<span class="quote">specification</span>”</span> name in one
+   of the included device files. The list of <span class="quote">“<span class="quote">plugs</span>”</span> used for
+   nodes need to
+   match an entry in the <span class="quote">“<span class="quote">plug name</span>”</span> list.
+  </p><p>
+   After configuring PowerMan, start its service by:
+  </p><div class="verbatim-wrap"><pre class="screen">systemctl start powerman.service</pre></div><p>
+   To start PowerMan automatically after every boot, run:
+  </p><div class="verbatim-wrap"><pre class="screen">systemctl enable powerman.service</pre></div><p>
+   Optionally, PowerMan can connect to a remote PowerMan instance. To
+   enable this, add the option <code class="literal">listen</code> to
+   <code class="filename">/etc/powerman/powerman.conf</code>.
+  </p><div id="id-1.5.2.6.12" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Unencrypted Transfer</h6><p>
+    When connecting to a remote PowerMan instance, data is transferred
+    unencrypted. Therefore, use this feature only if the network is
+    appropriately secured.
+   </p></div></div><div class="sect1 " id="sec-remote-memkind"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-memkind"><span class="number">3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">memkind — Heap Manager for Heterogeneous Memory Platforms and Mixed Memory Policies</span> <a title="Permalink" class="permalink" href="cha-remote.html#sec-remote-memkind">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-memkind</li></ul></div></div></div></div><p>
+   The <code class="literal">memkind</code> library is a user-extensible heap manager
+   built on top of <code class="literal">jemalloc</code> which enables control of
+   memory characteristics and a partitioning of the heap between kinds of
+   memory. The kinds of memory are defined by operating system memory
+   policies that have been applied to virtual address ranges. Memory
+   characteristics supported by <code class="literal">memkind</code> without user
+   extension include control of NUMA and page size features.
+  </p><p>
+   For more information, see:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     the man pages <code class="literal">memkind</code> and
+     <code class="literal">hbwallow</code>
+    </p></li><li class="listitem "><p>
+     <a class="link" href="https://github.com/memkind/memkind" target="_blank">https://github.com/memkind/memkind</a>
+    </p></li><li class="listitem "><p>
+     <a class="link" href="https://memkind.github.io/memkind/" target="_blank">https://memkind.github.io/memkind/</a>
+    </p></li></ul></div><div id="id-1.5.2.7.5" class="admonition note compact"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><p>
+    This tool is only available for x86-64.
+   </p></div></div><div class="sect1 " id="sec-remote-munge"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-munge"><span class="number">3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><span class="emphasis"><em>munge</em></span> Authentication</span> <a title="Permalink" class="permalink" href="cha-remote.html#sec-remote-munge">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-munge</li></ul></div></div></div></div><p>
+   <span class="emphasis"><em>munge</em></span>
+   allows users to connect as the same user from a machine to any other
+   machine which shares the same secret key. This can be used to set up a
+   cluster of machines between which the user can connect and execute
+   commands without any additional authentication.
+  </p><p>
+   The <span class="emphasis"><em>munge</em></span> authentication is based on a single shared key.
+   This key is
+   located under <code class="filename">/etc/munge/munge.key</code>. At the installation
+   time of the <span class="package">munge</span> package an individual munge key is
+   created from the random
+   source <code class="filename">/dev/urandom</code>. This key has to be the same on
+   all systems that should allow login to each other:
+   To set up <code class="literal">munge</code> authentication on these machines copy
+   the <span class="emphasis"><em>munge</em></span> key from one machine (ideally a head node of
+   the cluster)
+   to the other machines within this cluster:
+  </p><div class="verbatim-wrap"><pre class="screen">scp /etc/munge/munge.key root@<em class="replaceable ">NODE_N</em>:/etc/munge/munge.key</pre></div><p>
+   Then enable and start the service munge on each machine that users are
+   expected to log in to:
+  </p><div class="verbatim-wrap"><pre class="screen">systemctl enable munge.service
+systemctl start munge.service</pre></div><p>
+   If several nodes are installed, you must select and synchronize one key
+   to all other nodes in the cluster. This key file should belong to the
+   <code class="systemitem">munge</code> user and must have the
+   access rights <code class="literal">0400</code>.
+  </p></div><div class="sect1 " id="sec-remote-mrsh"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-mrsh"><span class="number">3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">mrsh/mrlogin — Remote Login Using <span class="emphasis"><em>munge</em></span> Authentication</span> <a title="Permalink" class="permalink" href="cha-remote.html#sec-remote-mrsh">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-mrsh</li></ul></div></div></div></div><p>
+   <span class="emphasis"><em>mrsh</em></span> is a set of remote shell programs using the
+   <span class="emphasis"><em>munge</em></span> authentication system instead of reserved ports
+   for security.
+  </p><p>
+   It can be used as a drop-in replacement for <code class="literal">rsh</code> and
+   <code class="literal">rlogin</code>.
+  </p><p>
+   To install <span class="emphasis"><em>mrsh</em></span>, do the following:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     If only the mrsh client is required (without allowing remote login to
+     this machine), use: <code class="command">zypper in mrsh</code>.
+    </p></li><li class="listitem "><p>
+     To allow logging in to a machine, the server needs to be installed:
+     <code class="literal">zypper in mrsh-server</code>.
+    </p></li><li class="listitem "><p>
+     To get a drop-in replacement for <code class="command">rsh</code> and
+     <code class="command">rlogin</code>, run: <code class="command">zypper in
+     mrsh-rsh-server-compat</code> or <code class="command">zypper in
+     mrsh-rsh-compat</code>.
+    </p></li></ul></div><p>
+   To set up a cluster of machines allowing remote login from each other,
+   first follow the instructions for setting up and starting
+   <span class="emphasis"><em>munge</em></span> authentication in <a class="xref" href="installation.html#sec2-installation-systemrole" title="2.1.1. System Role for SUSE Linux Enterprise High Performance Computing 15 SP2">Section 2.1.1, “System Role for SUSE Linux Enterprise High Performance Computing 15 SP2”</a>.
+   After <span class="emphasis"><em>munge</em></span> has been successfully
+   started, enable and start <code class="command">mrlogin</code> on each machine on
+   which the user will log in:
+  </p><div class="verbatim-wrap"><pre class="screen">systemctl enable mrlogind.socket mrshd.socket
+systemctl start mrlogind.socket mrshd.socket</pre></div><p>
+   To start mrsh support at boot, run:
+  </p><div class="verbatim-wrap"><pre class="screen">systemctl enable munge.service
+systemctl enable mrlogin.service</pre></div><p>
+   We do not recommend using <span class="emphasis"><em>mrsh</em></span> when logged in as the
+   user <code class="systemitem">root</code>. This is disabled by
+   default. To enable it anyway, run:
+  </p><div class="verbatim-wrap"><pre class="screen">echo "mrsh" &gt;&gt; /etc/securetty
+  echo "mrlogin" &gt;&gt; /etc/securetty</pre></div></div><div class="sect1 " id="sec-remote-ssh"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-ssh"><span class="number">3.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">sshd config</span> <a title="Permalink" class="permalink" href="cha-remote.html#sec-remote-ssh">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-ssh</li></ul></div></div></div></div><p>
+   A paragraph of text.
+  </p></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="part-nodes.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Part IV </span>Nodes</span></a><a class="nav-link" href="part-remote.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Part III </span>Remote Administration</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p></div></div></body></html>
